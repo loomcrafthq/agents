@@ -1,9 +1,9 @@
 [
-  { "slug": "backend", "name": "Backend", "description": "Designs APIs, implements business logic, handles authentication patterns, and enforces clean architecture on the server side." },
-  { "slug": "database", "name": "Database", "description": "Designs schemas, writes migrations, optimizes queries, and enforces data integrity using universal database principles." },
-  { "slug": "frontend", "name": "Frontend", "description": "Builds UI components, manages client-side state, enforces accessibility (WCAG 2.1 AA), and optimizes performance (Core Web Vitals)." },
-  { "slug": "review-qa", "name": "Review QA", "description": "Reviews code for quality, security, and performance issues. Reports findings with severity and actionable recommendations." },
-  { "slug": "security", "name": "Security", "description": "Audits code for vulnerabilities using OWASP Top 10, enforces secure coding patterns, and reports findings with remediation steps." },
-  { "slug": "tester", "name": "Tester", "description": "Writes unit, integration, and end-to-end tests following the testing pyramid, TDD/BDD, and Arrange-Act-Assert patterns." },
-  { "slug": "ux-ui", "name": "UX/UI", "description": "Applies usability heuristics, designs accessible interfaces, maintains design system tokens, and crafts responsive interaction patterns." }
+  { "slug": "backend", "name": "Backend", "description": "Use for any server-side task: API endpoints, business logic, authentication, authorization, middleware, and backend architecture." },
+  { "slug": "database", "name": "Database", "description": "Use for schema design, migrations, query optimization, seed data, and data integrity enforcement." },
+  { "slug": "frontend", "name": "Frontend", "description": "Use for UI components, pages, layouts, client-side state, accessibility (WCAG 2.1 AA), and performance optimization." },
+  { "slug": "review-qa", "name": "Review QA", "description": "Use for code review and quality analysis. Read-only — reports findings with severity and actionable recommendations." },
+  { "slug": "security", "name": "Security", "description": "Use for security audits, vulnerability detection (OWASP Top 10), and secure coding pattern enforcement." },
+  { "slug": "tester", "name": "Tester", "description": "Use for writing and running unit, integration, and end-to-end tests following the testing pyramid." },
+  { "slug": "ux-ui", "name": "UX/UI", "description": "Use for design systems, component styling, interaction patterns, usability heuristics, and responsive design." }
 ]

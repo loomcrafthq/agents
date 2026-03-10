@@ -6,13 +6,13 @@ Universal AI agents for Claude Code, Cursor, and other agent runtimes.
 
 | Slug | Name | Description |
 |------|------|-------------|
-| `backend` | Backend | Designs APIs, implements business logic, handles authentication patterns, and enforces clean architecture on the server side. |
-| `database` | Database | Designs schemas, writes migrations, optimizes queries, and enforces data integrity using universal database principles. |
-| `frontend` | Frontend | Builds UI components, manages client-side state, enforces accessibility (WCAG 2.1 AA), and optimizes performance (Core Web Vitals). |
-| `review-qa` | Review QA | Reviews code for quality, security, and performance issues. Reports findings with severity and actionable recommendations. |
-| `security` | Security | Audits code for vulnerabilities using OWASP Top 10, enforces secure coding patterns, and reports findings with remediation steps. |
-| `tester` | Tester | Writes unit, integration, and end-to-end tests following the testing pyramid, TDD/BDD, and Arrange-Act-Assert patterns. |
-| `ux-ui` | UX/UI | Applies usability heuristics, designs accessible interfaces, maintains design system tokens, and crafts responsive interaction patterns. |
+| `backend` | Backend | Use for any server-side task: API endpoints, business logic, authentication, authorization, middleware, and backend architecture. |
+| `database` | Database | Use for schema design, migrations, query optimization, seed data, and data integrity enforcement. |
+| `frontend` | Frontend | Use for UI components, pages, layouts, client-side state, accessibility (WCAG 2.1 AA), and performance optimization. |
+| `review-qa` | Review QA | Use for code review and quality analysis. Read-only — reports findings with severity and actionable recommendations. |
+| `security` | Security | Use for security audits, vulnerability detection (OWASP Top 10), and secure coding pattern enforcement. |
+| `tester` | Tester | Use for writing and running unit, integration, and end-to-end tests following the testing pyramid. |
+| `ux-ui` | UX/UI | Use for design systems, component styling, interaction patterns, usability heuristics, and responsive design. |
 
 ## Convention
 
@@ -21,9 +21,9 @@ Each agent is defined by an `AGENT.md` file inside its directory. The file uses 
 ```markdown
 ---
 name: Agent Name
-description: One-line description of what the agent does.
-model: claude-sonnet-4-20250514
-tools: ["tool1", "tool2"]
+description: "Use for [specific tasks this agent handles]."
+model: inherit
+tools: ["Read", "Edit", "Write", "Bash", "Grep", "Glob"]
 ---
 
 Detailed instructions for the agent in Markdown.
@@ -32,11 +32,11 @@ Detailed instructions for the agent in Markdown.
 **Frontmatter fields:**
 
 - `name` -- Display name of the agent.
-- `description` -- Short description of the agent's role.
-- `model` -- The model the agent should use.
-- `tools` -- List of tools the agent is allowed to invoke.
+- `description` -- Short description optimized for routing: starts with "Use for..." so the orchestrator knows when to invoke it.
+- `model` -- The model the agent should use. Use `inherit` to use the parent model, or specify a model ID (e.g., `claude-sonnet-4-6`).
+- `tools` -- JSON array of tools the agent is allowed to invoke.
 
-The Markdown body contains the full system prompt: rules, constraints, output format, and any domain-specific guidance the agent follows.
+The Markdown body contains the full system prompt: role definition, investigation protocol, tool usage guidance, domain rules, examples, anti-patterns, safety guardrails, handoff patterns, and a self-check section.
 
 ## Usage
 
